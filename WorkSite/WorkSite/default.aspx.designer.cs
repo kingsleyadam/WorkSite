@@ -13,6 +13,24 @@ namespace WorkSite {
     public partial class _default {
         
         /// <summary>
+        /// lblDevLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDevLinks;
+        
+        /// <summary>
+        /// repDevLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repDevLinks;
+        
+        /// <summary>
         /// lblQuickLinks control.
         /// </summary>
         /// <remarks>
@@ -119,5 +137,14 @@ namespace WorkSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dsIBMLinks;
+        
+        /// <summary>
+        /// dsDevLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsDevLinks;
     }
 }

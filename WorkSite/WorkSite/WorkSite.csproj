@@ -89,7 +89,10 @@
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="login.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="vacation_planner.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
@@ -120,6 +123,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="vacation_planner.aspx.cs">
+      <DependentUpon>vacation_planner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vacation_planner.aspx.designer.cs">
+      <DependentUpon>vacation_planner.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
