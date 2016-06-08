@@ -61,6 +61,7 @@
     <Content Include="default.aspx" />
     <Content Include="edit_links.aspx" />
     <Content Include="json_test.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="services\cars.asmx" />
     <Content Include="services\UserStatus.asmx" />
     <Content Include="css\bootstrap-theme.css.map" />
@@ -92,6 +93,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="Site.Master" />
     <Content Include="vacation_planner.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -119,6 +121,13 @@
     <Compile Include="json_test.aspx.designer.cs">
       <DependentUpon>json_test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\cars.asmx.cs">
       <DependentUpon>cars.asmx</DependentUpon>
@@ -127,6 +136,13 @@
     <Compile Include="services\UserStatus.asmx.cs">
       <DependentUpon>UserStatus.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="vacation_planner.aspx.cs">
       <DependentUpon>vacation_planner.aspx</DependentUpon>

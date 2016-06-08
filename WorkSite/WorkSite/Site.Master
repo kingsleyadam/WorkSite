@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WorkSite.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Productivity Home Page</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-content">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <asp:HyperLink ID="lnkHome" runat="server" CssClass="navbar-brand" NavigateUrl="~/default.aspx">
+                        <asp:Image ID="imgKenexaLogo" runat="server" ImageUrl="~/content/kenexa_logo_cropped.png" />
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="lnkEmail" runat="server" NavigateUrl="https://mail.notes.na.collabserv.com/verse" CssClass="navbar-brand" Target="_blank"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></asp:HyperLink>
+                    <asp:HyperLink ID="lnkVacationPlanner" runat="server" NavigateUrl="https://mail.notes.na.collabserv.com/livemail/iNotes/Calendar/?OpenDocument" CssClass="navbar-brand" Target="_blank"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/vacation_planner.aspx" CssClass="navbar-brand"><span class="glyphicon glyphicon-road" aria-hidden="true"></span></asp:HyperLink>
+
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-content">
+                    <ul class="nav navbar-nav navbar-right">
+                        <p class="navbar-text">
+                            Signed in as <strong>
+                                <asp:LoginName ID="lgnName" runat="server" />
+                            </strong>|
+                        <asp:LoginStatus ID="lgnStatus" runat="server" CssClass="navbar-link" />
+                        </p>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <asp:HyperLink ID="lnkEditQuickLinks" runat="server" Text="Edit Quick Links" NavigateUrl="~/edit_links.aspx" /></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            CheckingSession();
+        });
+        function CheckingSession() {
+            $.ajax({
+                type: "POST",
+                url: "services/UserStatus.asmx/LoggedIn",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: OnErrorCall
+            });
+            function OnSuccess(response) {
+                if (response.d == 'true')
+                {
+                    window.location.href = "/login.aspx";
+                }
+            }
+            function OnErrorCall(response) { console.log(error); }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="JavaScriptPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
