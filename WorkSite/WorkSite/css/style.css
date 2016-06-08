@@ -1,0 +1,33 @@
+﻿body {
+    padding-top:70px;
+    padding-bottom:20px;
+}
+
+/*Navbar Brand-Logo*/
+.navbar-brand > img {
+    height:20px;
+}
+
+/*List Customizations*/
+.list-group:last-child {
+    margin-bottom:0;
+}
+
+/*Panel Customizations*/
+.panel:last-child {
+    margin-bottom:0;
+}
+
+.edit-link-panel {
+    margin-top:20px;
+}
+
+.hidden {
+    display:none;
+}
+
+.vacation-planner {
+    border:0;
+    width:100%;
+    height:500px;
+}
